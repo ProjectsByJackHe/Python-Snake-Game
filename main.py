@@ -5,6 +5,7 @@
 
 
 import pygame
+import time
 from random import randint
 # initialize pygame
 pygame.init()
@@ -129,13 +130,14 @@ def reset():
 
 # Controls the difficulty of this snake game
 MARGIN_OF_ERROR = 25
-
+FRAME_FREQUENCY = 0.05
 # ============================ ============================ ============================
 # ============================ ============================ ============================
 # Start of Game Loop:
 
 
 while run:
+    time.sleep(FRAME_FREQUENCY)
     visited = queue[:]
     if len(visited) >= 1:
         visited.pop()
